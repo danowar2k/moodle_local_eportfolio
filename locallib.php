@@ -520,7 +520,7 @@ function get_course_roles_to_share($courseid) {
     // We need a little more to do here.
     $coursecontext = context_course::instance($courseid);
 
-    $sql = "SELECT * FROM {role_assignments} WHERE contextid = ? GROUP BY roleid";
+    $sql = "SELECT roleid FROM {role_assignments} WHERE contextid = ? GROUP BY roleid";
     $params = array(
             'contextid' => $coursecontext->id,
     );
